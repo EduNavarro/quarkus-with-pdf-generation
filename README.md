@@ -6,6 +6,10 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 ## Running the application in dev mode
 
+<p>
+<details>
+<summary>Expandir la información</summary>
+
 You can run your application in dev mode that enables live coding using:
 ```shell script
 ./mvnw compile quarkus:dev
@@ -13,7 +17,15 @@ You can run your application in dev mode that enables live coding using:
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
 
+</details>
+</p> 
+<p><br></p>
+
 ## Packaging and running the application
+
+<p>
+<details>
+<summary>Expandir la información</summary>
 
 The application can be packaged using:
 ```shell script
@@ -31,7 +43,15 @@ If you want to build an _über-jar_, execute the following command:
 
 The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
 
+</details>
+</p> 
+<p><br></p>
+
 ## Creating a native executable
+
+<p>
+<details>
+<summary>Expandir la información</summary>
 
 You can create a native executable using: 
 ```shell script
@@ -47,10 +67,23 @@ You can then execute your native executable with: `./target/quarkus-with-pdf-gen
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
-## Provided Code
+</details>
+</p> 
+<p><br></p>
 
-### RESTEasy Reactive
+# Functionality
 
-Easily start your Reactive RESTful Web Services
+<p>
+<details>
+<summary>Expandir la información</summary>
+This project is used to explore the capabilities of quarkus in conjuction with the open source pdfbox libraries.
 
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+#### Endpoints
+This project exposes an endpoint that receives a CloudEvent:
+
+| Verb | URI | Function |
+| POST | /document/pdf |Create the PDF document using the data of the CloudEvent|
+|---|---|---|
+</details>
+</p> 
+<p><br></p>
