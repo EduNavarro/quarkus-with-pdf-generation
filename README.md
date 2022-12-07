@@ -81,7 +81,6 @@ This project is used to explore the capabilities of quarkus in conjuction with t
 #### Endpoints
 This project exposes an endpoint that receives a CloudEvent:
 
-|---|---|---|
 | Verb | URI | Function |
 |---|---|---|
 | POST | /document/pdf |Create the PDF document using the data of the CloudEvent|
