@@ -20,6 +20,16 @@ public class PdfService extends BaseService {
 	        
 	private static final String HEADER_TEXT = "Issuing document ID - ";
 
+	/**
+	 * Creates a PDF document using the information of 
+	 * an EventData payload.
+	 * 
+	 * It creates a header and a single page with the contents
+	 * and saves it into the configured path.
+	 * 
+	 * @param payload
+	 * @return
+	 */
 	public boolean createPdfDocument(final EventData payload) {
 
 		boolean isOk = false;
@@ -28,9 +38,9 @@ public class PdfService extends BaseService {
 
 			addHeaderPage(document, payload);
 
-			addContentPages(payload, document);
+			addContentPages(document, payload);
 			
-			document.save(path+getFilePath(payload.getDocumentId()));
+			document.save(composeFullPath(payload));
 			
 			isOk=true;
 
@@ -61,7 +71,7 @@ public class PdfService extends BaseService {
 	}
 
 	
-	private void addContentPages(final EventData payload, PDDocument document) throws IOException {
+	private void addContentPages(PDDocument document, final EventData payload) throws IOException {
 		PDPage page = new PDPage(PDRectangle.A4);
 		document.addPage(page);
 		
@@ -100,4 +110,8 @@ public class PdfService extends BaseService {
 		StringBuilder contentString = new StringBuilder("NAME: ").append(datum.getDetailName()).append("   |   ").append("STATUS: ").append(datum.getStatus()).append("   |   ").append("QUANTITY: ").append(datum.getQuantity());
 		return contentString.toString();
 	}
+	
+    private String composeFullPath(final EventData payload) {
+        return path+getFilePath(payload.getDocumentId());
+    }
 }

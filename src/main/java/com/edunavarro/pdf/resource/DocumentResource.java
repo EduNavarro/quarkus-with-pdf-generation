@@ -31,13 +31,7 @@ public class DocumentResource {
 	
     @Inject
     PdfService pdfService;
-	
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello from RESTEasy Reactive, Edu";
-    }
-    
+	    
     @POST
     @Path("/pdf")
     @Consumes(MediaType.APPLICATION_JSON)
