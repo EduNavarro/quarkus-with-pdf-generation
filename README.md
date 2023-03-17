@@ -79,12 +79,11 @@ If you want to learn more about building native executables, please consult http
 This project is used to explore the capabilities of quarkus in conjuction with the open source pdfbox libraries.
 
 #### Endpoints
-This project exposes an endpoint that receives a CloudEvent:
+This project exposes an endpoint that receives a Google CloudEvent and generate a PDF in the configured folder:
 
 | Verb | URI | Function |
 |---|---|---|
 | POST | /document/pdf |Create the PDF document using the data of the CloudEvent|
-|---|---|---|
 </details>
 </p> 
 <p><br></p>
